@@ -1,368 +1,362 @@
-/* Подключаем плавную прокрутку */
-html {
-    scroll-behavior: smooth;
+/* ==========================================================================
+   Маркиз · Наглядное пособие по уходу
+   Минималистичный, читаемый, современный дизайн для мобильных экранов.
+   Один шрифт (Montserrat), один акцент (глубокий синий), красный — только
+   для тревожных карточек, амбер — для "внимание, но не паника".
+   ========================================================================== */
+
+:root {
+  /* палитра */
+  --bg: #F4F5F7;
+  --paper: #FFFFFF;
+  --ink: #20262E;
+  --ink-soft: #626C77;
+  --line: #E4E7EC;
+
+  --accent: #2E4057;
+  --accent-dark: #1E2B3C;
+  --accent-soft: #E8ECF1;
+
+  --warn: #C97B2E;
+  --warn-soft: #FBEBD9;
+
+  --alert: #B03A2E;
+  --alert-soft: #F8E3DF;
+
+  --radius-lg: 20px;
+  --radius-md: 14px;
+  --radius-sm: 8px;
+
+  --shadow: 0 4px 16px rgba(20, 26, 33, 0.06);
+
+  --font: 'Montserrat', sans-serif;
 }
 
-/* Базовые настройки */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
 
 body {
-    font-family: 'Montserrat', sans-serif;
-    background-color: #f7f9fc;
-    color: #2d3748;
-    display: flex;
-    justify-content: center;
-    min-height: 100vh;
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font);
+  font-weight: 400;
+  font-size: 13.5px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Мобильный контейнер */
 .mobile-container {
-    width: 100%;
-    max-width: 480px;
-    background-color: #ffffff;
-    min-height: 100vh;
-    padding: 16px;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 20px 16px 64px;
 }
 
-/* 1. СТИЛЬНАЯ ШАПКА */
+a { color: var(--accent); }
+
+h1, h2, h3 {
+  font-family: var(--font);
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0 0 10px;
+  letter-spacing: -0.01em;
+}
+
+p {
+  margin: 0 0 10px;
+  font-weight: 400;
+}
+p:last-child { margin-bottom: 0; }
+
+strong { font-weight: 600; }
+
+/* ---------- header (простой, без цветных плашек) ---------- */
+
 .header {
-    background: linear-gradient(135deg, #ff5e62 0%, #ff9966 100%);
-    color: #ffffff;
-    border-radius: 20px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    box-shadow: 0 8px 20px rgba(255, 94, 98, 0.25);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--accent);
+  border-radius: var(--radius-lg);
+  padding: 28px 22px 24px;
+  margin-bottom: 18px;
+  text-align: center;
+  box-shadow: var(--shadow);
 }
 
 .header-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .logo-area {
-    display: flex;
-    align-items: center;
-    gap: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
 }
 
 .avatar {
-    width: 52px;
-    height: 52px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid rgba(255, 255, 255, 0.8);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--accent-soft);
 }
 
 .site-title {
-    font-size: 17px;            /* Немного крупнее, чтобы компенсировать заглавные */
-    font-weight: 900;           /* Максимально жирный */
-    text-transform: uppercase;  /* Все буквы СТАНОВЯТСЯ БОЛЬШИМИ */
-    letter-spacing: 0.05em;     /* Чуть раздвигаем буквы для стиля */
-    line-height: 1.3;           
-    text-align: left;         /* Выравниваем ровно по центру контейнера */           /* Добавляем отступ сверху, так как он теперь по центру */
-    flex: 1;                    /* Позволяет заголовку занять все свободное пространство между аватаркой и бургером */
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ink);
 }
 
 .header-quote {
-    font-size: 13px;
-    font-style: italic;
-    opacity: 0.95;
-    line-height: 1.4;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 0.86rem;
+  color: var(--accent-dark);
+  margin-top: 18px;
+  padding: 0 4px;
 }
 
 .quote-author {
-    font-size: 11px;
-    font-style: normal;
-    font-weight: 300;
-    opacity: 0.8;
-    text-align: right;
-    letter-spacing: 0.02em;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--ink-soft);
+  margin-top: 4px;
 }
 
-/* Бургер-меню */
-.burger {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 24px;
-    height: 16px;
-    cursor: pointer;
-}
+/* ---------- generic card ---------- */
 
-.burger span {
-    width: 100%;
-    height: 2.5px;
-    background-color: #ffffff;
-    border-radius: 4px;
-}
-
-/* ОБЩИЙ СТИЛЬ КАРТОЧЕК */
 .card {
-    background: #ffffff;
-    border: 1px solid #edf2f7;
-    border-radius: 20px;
-    padding: 20px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
-    transition: transform 0.2s ease;
+  background: var(--paper);
+  border-radius: var(--radius-lg);
+  padding: 22px 20px;
+  margin-bottom: 16px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--line);
 }
 
-.card p {
-    font-size: 13.5px;
-    line-height: 1.5;
-}
-
-.card:active {
-    transform: scale(0.99);
-}
-
-.card h2, .card h3 {
-    font-size: 15px;
-    font-weight: 700;
-    margin-bottom: 12px;
-    color: #1a202c;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-
+.card h2 {
+  font-size: 0.92rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .intro-card {
-    background: linear-gradient(135deg, #ebf8ff 0%, #e1effe 100%);
-    border-color: #bee3f8;
+  border-left: 4px solid var(--accent);
 }
 
-.intro-card p {
-    font-size: 13.5px;
-    color: #2b6cb0;
-    line-height: 1.5;
-}
+/* ---------- nav / toc ---------- */
 
-/* 2. ЦЕЛИ НА СЕГОДНЯ */
-.goals-card {
-    background: linear-gradient(135deg, #fff5f5 0% #fff0f0 100%);
-    border-color: #ffe3e3;
-}
-
-.goals-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    font-weight: 600;
-    font-size: 14px;
-}
-
-.goals-list li {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    background: #ffffff;
-    padding: 10px 14px;
-    border-radius: 12px;
-    box-shadow: 0 2px 6px rgba(255, 94, 98, 0.05);
-}
-
-/* 3. ВАЖНЫЕ ПРАВИЛА */
-.rules-card {
-    background: linear-gradient(135deg, #fffaf0 0%, #fff4e5 100%);
-    border-color: #ffe8cc;
-}
-
-.rules-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.rules-list li {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    background: #ffffff;
-    padding: 12px 14px;
-    border-radius: 12px;
-    box-shadow: 0 2px 6px rgba(255, 165, 0, 0.05);
-    font-size: 13.5px;
-    line-height: 1.45;
-    color: #7b341e;
-}
-
-.rule-icon {
-    font-size: 16px;
-    flex-shrink: 0;
-    margin-top: 1px;
-}
-
-/* 4. ОСНОВНОЕ */
-.main-info-card {
-    background: linear-gradient(135deg, #f0fff4 0%, #e6fffa 100%);
-    border-color: #c6f6d5;
-}
-
-.main-info-card p {
-    font-size: 13.5px;
-    color: #234e52;
-}
-
-/* 5. ОГЛАВЛЕНИЕ */
-.nav-card {
-    background: #f8fafc;
-}
+.nav-card { padding: 16px 18px; }
 
 .toc-links {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
 }
 
 .toc-links a {
-    display: block;
-    color: #ff5e62;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 14px;
-    padding: 8px 12px;
-    background: #ffffff;
-    border-radius: 10px;
-    border: 1px solid #edf2f7;
-    transition: all 0.2s;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.74rem;
+  color: var(--accent-dark);
+  background: var(--accent-soft);
+  border-radius: 999px;
+  padding: 8px 16px;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
 .toc-links a:hover {
-    background: #ff5e62;
-    color: #ffffff;
-    padding-left: 16px;
+  background: var(--accent);
+  color: #fff;
 }
 
-/* 6. КОНТЕНТНЫЕ БЛОКИ */
-.content-blocks {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+/* ---------- goals ---------- */
+
+.goals-list {
+  list-style: none;
+  margin: 14px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
 }
 
-.content-section {
-    background: #ffffff;
+.goals-list li {
+  background: var(--accent-soft);
+  border-radius: var(--radius-md);
+  padding: 12px 10px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.76rem;
+  color: var(--accent-dark);
 }
 
-.content-section p {
-    font-size: 13.5px;
-    color: #4a5568;
-    line-height: 1.5;
+/* ---------- rule / step lists ---------- */
+
+.rules-list, .steps-list {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
-
-/* Стили для разделов лотка и чрезвычайных ситуаций */
-
-.panic-card {
-    background: linear-gradient(135deg, #f0fff4 0%, #dcfae6 100%);
-    border-color: #c6f6d5;
+.rules-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px 14px;
+  background: var(--bg);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line);
 }
 
-.panic-card p {
-    font-size: 13.5px;
-    color: #22543d;
-    line-height: 1.5;
-    margin-bottom: 8px;
+.rules-list li strong { color: var(--accent-dark); }
+
+.rule-icon {
+  flex: 0 0 auto;
+  font-size: 1rem;
+  line-height: 1;
+  margin-top: 1px;
 }
 
-.litter-clean-card {
-    background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
-    border-color: #e2e8f0;
-}
-
-.norm-card {
-    background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
-    border-color: #fde68a;
-}
-
-.alert-card {
-    background: linear-gradient(135deg, #fff5f5 0%, #fed7d7 100%);
-    border-color: #feb2b2;
-}
-
-.emergency-card {
-    background: linear-gradient(135deg, #fff0f0 0%, #ffdbdb 100%);
-    border: 2px solid #feb2b2;
-}
-
-.emergency-card h2 {
-    color: #9b2c2c;
-}
-
-.emergency-card p {
-    font-size: 13.5px;
-    color: #742a2a;
-    line-height: 1.5;
-    margin-top: 8px;
-}
-
-/* Нумерованный список для экстренных шагов */
 .steps-list {
-    list-style: decimal;
-    list-style-position: inside;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    margin: 10px 0;
-    font-size: 13.5px;
-    color: #742a2a;
-    line-height: 1.45;
+  counter-reset: step;
+  padding-left: 0;
 }
 
 .steps-list li {
-    background: #ffffff;
-    padding: 10px 12px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(153, 27, 27, 0.05);
+  position: relative;
+  padding: 12px 14px 12px 46px;
+  background: var(--alert-soft);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line);
 }
 
+.steps-list li::before {
+  counter-increment: step;
+  content: counter(step);
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--alert);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-/* КНОПКА ВОЗВРАТА НАВЕРХ */
+/* ---------- section-specific accents ---------- */
+/* Все карточки визуально одинаковы (белая подложка, тень, рамка) —
+   отличается только цвет верхней полоски и заголовка по смыслу. */
+
+.treatment-card, .food-card, .soup-card, .litter-clean-card {
+  border-top: 3px solid var(--accent);
+}
+
+.treats-card, .panic-card {
+  border-top: 3px solid var(--ink-soft);
+}
+
+.norm-card {
+  border-top: 3px solid var(--warn);
+}
+.norm-card .rules-list li { background: var(--warn-soft); }
+
+/* критически важное: главные правила, тревога, экстренная ситуация —
+   единая красная маркировка по всему документу */
+.rules-card,
+.alert-card,
+.emergency-card {
+  border-top: 3px solid var(--alert);
+}
+
+.rules-card h2,
+.alert-card h2,
+.emergency-card h2 {
+  color: var(--alert);
+}
+
+.rules-card .rules-list li,
+.alert-card .rules-list li {
+  background: var(--alert-soft);
+  border-color: transparent;
+}
+
+.rules-card .rules-list li strong,
+.alert-card .rules-list li strong {
+  color: var(--alert);
+}
+
+.emergency-card p:last-child {
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--alert);
+  background: var(--alert-soft);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  margin-top: 12px;
+}
+
+/* ---------- section headers ---------- */
+
+.content-section h3 {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--ink-soft);
+  margin-bottom: 14px;
+}
+
+.content-section {
+  scroll-margin-top: 18px;
+}
+
+.content-section .card { margin-bottom: 14px; }
+.content-section .card:last-child { margin-bottom: 0; }
+
+/* ---------- back to top ---------- */
+
 .back-to-top {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    width: 100%;
-    /* Фиксируем максимальную ширину и центрируем, чтобы она не растягивалась */
-    max-width: 100%; 
-    background: linear-gradient(135deg, #ff5e62 0%, #ff9966 100%);
-    color: #ffffff;
-    padding: 14px 20px;
-    border-radius: 16px;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 15px;
-    letter-spacing: 0.02em;
-    margin-top: 12px;
-    margin-bottom: 24px;
-    box-shadow: 0 8px 20px rgba(255, 94, 98, 0.25);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    
-    /* Главная защита от расползания во флекс-контейнере */
-    align-self: center; 
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.78rem;
+  color: var(--accent-dark);
+  padding: 14px;
+  margin-top: 6px;
 }
 
-.back-to-top:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 24px rgba(255, 94, 98, 0.35);
+/* ---------- focus / motion ---------- */
+
+a:focus-visible, .toc-links a:focus-visible {
+  outline: 2px solid var(--accent-dark);
+  outline-offset: 2px;
 }
 
-.back-to-top:active {
-    transform: translateY(1px);
-    box-shadow: 0 4px 10px rgba(255, 94, 98, 0.2);
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}
+
+/* ---------- slightly wider phones ---------- */
+
+@media (min-width: 420px) {
+  .mobile-container { padding: 20px 20px 64px; }
 }
