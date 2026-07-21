@@ -1,0 +1,251 @@
+/* Подключаем плавную прокрутку */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Базовые настройки */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f7f9fc;
+    color: #2d3748;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* Мобильный контейнер */
+.mobile-container {
+    width: 100%;
+    max-width: 480px;
+    background-color: #ffffff;
+    min-height: 100vh;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+}
+
+/* 1. СТИЛЬНАЯ ШАПКА */
+.header {
+    background: linear-gradient(135deg, #ff5e62 0%, #ff9966 100%);
+    color: #ffffff;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    box-shadow: 0 8px 20px rgba(255, 94, 98, 0.25);
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.avatar {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.site-title {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+}
+
+.header-quote {
+    font-size: 13px;
+    font-style: italic;
+    opacity: 0.95;
+    line-height: 1.4;
+}
+
+/* Бургер-меню */
+.burger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.burger span {
+    width: 100%;
+    height: 2.5px;
+    background-color: #ffffff;
+    border-radius: 4px;
+}
+
+/* ОБЩИЙ СТИЛЬ КАРТОЧЕК */
+.card {
+    background: #ffffff;
+    border: 1px solid #edf2f7;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    transition: transform 0.2s ease;
+}
+
+.card:active {
+    transform: scale(0.99);
+}
+
+.card h2, .card h3 {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #1a202c;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+/* 2. ЦЕЛИ НА СЕГОДНЯ */
+.goals-card {
+    background: linear-gradient(135deg, #fff5f5 0% #fff0f0 100%);
+    border-color: #ffe3e3;
+}
+
+.goals-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.goals-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #ffffff;
+    padding: 10px 14px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(255, 94, 98, 0.05);
+}
+
+/* 3. ВАЖНЫЕ ПРАВИЛА */
+.rules-card {
+    background: linear-gradient(135deg, #fffaf0 0%, #fff4e5 100%);
+    border-color: #ffe8cc;
+}
+
+.rules-card p {
+    font-size: 13.5px;
+    line-height: 1.5;
+    color: #7b341e;
+}
+
+/* 4. ОСНОВНОЕ */
+.main-info-card {
+    background: linear-gradient(135deg, #f0fff4 0%, #e6fffa 100%);
+    border-color: #c6f6d5;
+}
+
+.main-info-card p {
+    font-size: 13.5px;
+    color: #234e52;
+}
+
+/* 5. ОГЛАВЛЕНИЕ */
+.nav-card {
+    background: #f8fafc;
+}
+
+.toc-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.toc-links a {
+    display: block;
+    color: #ff5e62;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 8px 12px;
+    background: #ffffff;
+    border-radius: 10px;
+    border: 1px solid #edf2f7;
+    transition: all 0.2s;
+}
+
+.toc-links a:hover {
+    background: #ff5e62;
+    color: #ffffff;
+    padding-left: 16px;
+}
+
+/* 6. КОНТЕНТНЫЕ БЛОКИ */
+.content-blocks {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.content-section {
+    background: #ffffff;
+}
+
+.content-section p {
+    font-size: 13.5px;
+    color: #4a5568;
+    line-height: 1.5;
+}
+
+/* КНОПКА ВОЗВРАТА НАВЕРХ */
+.back-to-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    /* Фиксируем максимальную ширину и центрируем, чтобы она не растягивалась */
+    max-width: 100%; 
+    background: linear-gradient(135deg, #ff5e62 0%, #ff9966 100%);
+    color: #ffffff;
+    padding: 14px 20px;
+    border-radius: 16px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 0.02em;
+    margin-top: 12px;
+    margin-bottom: 24px;
+    box-shadow: 0 8px 20px rgba(255, 94, 98, 0.25);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Главная защита от расползания во флекс-контейнере */
+    align-self: center; 
+}
+
+.back-to-top:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(255, 94, 98, 0.35);
+}
+
+.back-to-top:active {
+    transform: translateY(1px);
+    box-shadow: 0 4px 10px rgba(255, 94, 98, 0.2);
+}
