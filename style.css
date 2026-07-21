@@ -1,12 +1,4 @@
-/* ==========================================================================
-   Маркиз · Наглядное пособие по уходу
-   Минималистичный, читаемый, современный дизайн для мобильных экранов.
-   Один шрифт (Montserrat), один акцент (глубокий синий), красный — только
-   для тревожных карточек, амбер — для "внимание, но не паника".
-   ========================================================================== */
-
 :root {
-  /* палитра */
   --bg: #F4F5F7;
   --paper: #FFFFFF;
   --ink: #20262E;
@@ -71,8 +63,6 @@ p:last-child { margin-bottom: 0; }
 
 strong { font-weight: 600; }
 
-/* ---------- header (простой, без цветных плашек) ---------- */
-
 .header {
   background: var(--paper);
   border: 1px solid var(--line);
@@ -116,7 +106,6 @@ strong { font-weight: 600; }
   font-weight: 500;
   font-size: 0.86rem;
   color: var(--accent-dark);
-  margin-top: 18px;
   padding: 0 4px;
 }
 
@@ -126,8 +115,6 @@ strong { font-weight: 600; }
   color: var(--ink-soft);
   margin-top: 4px;
 }
-
-/* ---------- generic card ---------- */
 
 .card {
   background: var(--paper);
@@ -148,8 +135,6 @@ strong { font-weight: 600; }
 .intro-card {
   border-left: 4px solid var(--accent);
 }
-
-/* ---------- nav / toc ---------- */
 
 .nav-card { padding: 16px 18px; }
 
@@ -179,8 +164,6 @@ strong { font-weight: 600; }
   color: #fff;
 }
 
-/* ---------- goals ---------- */
-
 .goals-list {
   list-style: none;
   margin: 14px 0 0;
@@ -199,8 +182,6 @@ strong { font-weight: 600; }
   font-size: 0.76rem;
   color: var(--accent-dark);
 }
-
-/* ---------- rule / step lists ---------- */
 
 .rules-list, .steps-list {
   list-style: none;
@@ -261,10 +242,6 @@ strong { font-weight: 600; }
   justify-content: center;
 }
 
-/* ---------- section-specific accents ---------- */
-/* Все карточки визуально одинаковы (белая подложка, тень, рамка) —
-   отличается только цвет верхней полоски и заголовка по смыслу. */
-
 .treatment-card, .food-card, .soup-card, .litter-clean-card {
   border-top: 3px solid var(--accent);
 }
@@ -278,8 +255,6 @@ strong { font-weight: 600; }
 }
 .norm-card .rules-list li { background: var(--warn-soft); }
 
-/* критически важное: главные правила, тревога, экстренная ситуация —
-   единая красная маркировка по всему документу */
 .rules-card,
 .alert-card,
 .emergency-card {
@@ -313,8 +288,6 @@ strong { font-weight: 600; }
   margin-top: 12px;
 }
 
-/* ---------- section headers ---------- */
-
 .content-section h3 {
   font-size: 0.7rem;
   text-transform: uppercase;
@@ -330,8 +303,6 @@ strong { font-weight: 600; }
 .content-section .card { margin-bottom: 14px; }
 .content-section .card:last-child { margin-bottom: 0; }
 
-/* ---------- back to top ---------- */
-
 .back-to-top {
   display: block;
   text-align: center;
@@ -343,19 +314,52 @@ strong { font-weight: 600; }
   margin-top: 6px;
 }
 
-/* ---------- focus / motion ---------- */
-
 a:focus-visible, .toc-links a:focus-visible {
   outline: 2px solid var(--accent-dark);
   outline-offset: 2px;
+}
+
+.timer-card {
+    border-top: 3px solid var(--accent);
+}
+
+.timer-display {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    text-align: center;
+    margin-top: 14px;
+}
+
+.timer-box {
+    background: var(--bg);
+    padding: 12px 6px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--line);
+}
+
+.timer-num {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--accent-dark);
+    display: block;
+    letter-spacing: -0.01em;
+}
+
+.timer-label {
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: var(--ink-soft);
+    margin-top: 4px;
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   * { transition: none !important; }
 }
-
-/* ---------- slightly wider phones ---------- */
 
 @media (min-width: 420px) {
   .mobile-container { padding: 20px 20px 64px; }
