@@ -214,6 +214,7 @@ strong { font-weight: 600; }
 .steps-list {
   counter-reset: step;
   padding-left: 0;
+
 }
 
 .steps-list li {
@@ -261,6 +262,13 @@ strong { font-weight: 600; }
   border-top: 3px solid var(--alert);
 }
 
+.emergency-card p, 
+.alert-card p, 
+.rules-card p {
+    margin-top: 14px;
+    padding: 0 4px; /* выравнивает текст по внутренним отступам карточки */
+}
+
 .rules-card h2,
 .alert-card h2,
 .emergency-card h2 {
@@ -304,14 +312,31 @@ strong { font-weight: 600; }
 .content-section .card:last-child { margin-bottom: 0; }
 
 .back-to-top {
-  display: block;
-  text-align: center;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.78rem;
-  color: var(--accent-dark);
-  padding: 14px;
-  margin-top: 6px;
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 1000;
+    
+    /* Оформление под стиль карточек */
+    background: var(--card-bg, #ffffff);
+    color: var(--accent, #b35942);
+    padding: 10px 16px;
+    border-radius: var(--radius-sm, 8px);
+    border: 1px solid var(--line, #e2d9d2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    
+    /* Плавность при наведении */
+    transition: all 0.2s ease;
+}
+
+.back-to-top:hover {
+    background: var(--accent, #b35942);
+    color: #ffffff;
+    transform: translateY(-2px);
 }
 
 a:focus-visible, .toc-links a:focus-visible {

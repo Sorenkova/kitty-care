@@ -1,4 +1,4 @@
-const arrivalDate = new Date('2026-08-26T09:00:00').getTime();
+const arrivalDate = new Date('2026-08-20T09:00:00').getTime();
 
 function updateCountdown() {
     const now = new Date().getTime();
