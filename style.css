@@ -242,6 +242,45 @@ img.no-border {
     border: none !important;
 }
 
+.img-container video {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-sm, 8px);
+  border: 1px solid var(--line, #e2d9d2);
+  box-sizing: border-box;
+  background: #000;
+}
+
+.video-frame {
+  position: relative;
+  cursor: pointer;
+}
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+  transition: transform 0.15s ease;
+}
+
+.play-button svg { margin-left: 2px; } /* оптическая центровка треугольника */
+
+.video-frame:active .play-button { transform: translate(-50%, -50%) scale(0.92); }
+
+.video-frame.is-playing .play-button { display: none; }
+
 .recipe-content {
     display: flex;
     flex-direction: column;
