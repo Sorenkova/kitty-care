@@ -7,7 +7,7 @@ function updateCountdown() {
     const timerElement = document.getElementById('timer');
 
     if (distance < 0) {
-        timerElement.innerHTML = '<div class="timer-box" style="grid-column: span 4;"><span class="timer-num" style="color: #B91C1C;">Хозяева уже приехали! 🎉</span></div>';
+        timerElement.innerHTML = '<div class="timer-box" style="grid-column: span 4;"><span class="timer-num" style="color: #B91C1C;">Ваша работа выполнена! 🎉</span></div>';
         return;
     }
 
